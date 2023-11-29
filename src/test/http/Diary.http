@@ -11,3 +11,8 @@ Accept: application/json
 ### read diaries
 GET http://localhost:8080/read/diaries?startDate=2023-11-25&endDate=2023-11-29
 Accept: application/json
+
+### update diary
+PUT http://localhost:8080/update/diary?date=2023-11-25
+
+일기 수정하기!!
