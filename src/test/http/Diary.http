@@ -1,0 +1,9 @@
+### create diary
+POST http://localhost:8080/create/diary?date=2023-11-29
+Content-Type: application/json
+
+오늘 코딩 너무 재밌다
+
+### read diary
+GET http://localhost:8080/read/diary?date=2023-11-29
+Accept: application/json
