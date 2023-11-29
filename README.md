@@ -84,7 +84,7 @@
 
 ## 정보
 
-[api 바로가기](http://localhost:8080/swagger-ui/index.html)
+[api doc 바로가기](http://localhost:8080/swagger-ui/index.html)
 (서버 중단 시 조회 불가하므로 위 이미지로 업로드함.)
 
 [노션 바로가기](https://www.notion.so/goo99/4a8786ee05f54630b4c2e96177697baa)
