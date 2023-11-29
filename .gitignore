@@ -35,6 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+logs
+logback-spring.xml
 
 ### api key ###
 application-API-KEY.yml

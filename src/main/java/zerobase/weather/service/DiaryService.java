@@ -5,11 +5,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
+import zerobase.weather.WeatherApplication;
 import zerobase.weather.domain.DateWeather;
 import zerobase.weather.domain.Diary;
 import zerobase.weather.repository.DateWeatherRepository;
@@ -33,15 +36,19 @@ public class DiaryService {
 
   private final DiaryRepository diaryRepository;
   private final DateWeatherRepository dateWeatherRepository;
+  private static final Logger logger = LoggerFactory.getLogger(WeatherApplication.class);
 
   @Transactional
-  @Scheduled(cron = "0/5 * * * * *")
-  public void saveWeatherDate() {
+  @Scheduled(cron = "0 0 1 * * *")
+  public void saveWeatherData() {
+    logger.info("complete to save weather data");
     dateWeatherRepository.save(getWeatherFromApi());
   }
 
   @Transactional(isolation = Isolation.SERIALIZABLE)
   public void createDiary(LocalDate date, String text) {
+    logger.info("started to create diary");
+
     DateWeather dateWeather = getDateWeather(date);
 
     Diary nowDiary = new Diary();
@@ -49,6 +56,8 @@ public class DiaryService {
     nowDiary.setText(text);
 
     diaryRepository.save(nowDiary);
+
+    logger.info("end to create diary");
   }
 
   private DateWeather getWeatherFromApi() {
@@ -79,6 +88,7 @@ public class DiaryService {
 
   @Transactional(readOnly = true)
   public List<Diary> readDiary(LocalDate date) {
+    logger.debug("read diary");
     return diaryRepository.findAllByDate(date);
   }
 
