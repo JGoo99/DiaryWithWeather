@@ -1,4 +1,4 @@
-# 계좌 관리 시스템
+# 실전 날씨 일기 프로젝트
 ![main](https://github.com/JGoo99/DiaryWithWeather/assets/126454114/f4bb3fb7-1bf3-457e-832f-6f264d67da93)
 
 
