@@ -5,7 +5,7 @@ Content-Type: application/json
 29일에 작성된 일기
 
 ### read diary
-GET http://localhost:8080/read/diary?date=2023-11-29
+GET http://localhost:8080/read/diary?date=invalid
 Accept: application/json
 
 ### read diaries
