@@ -1,11 +1,11 @@
 ### create diary
-POST http://localhost:8080/create/diary?date=2023-11-2
+POST http://localhost:8080/create/diary?date=2023-11-29
 Content-Type: application/json
 
-26일에 작성된 일기
+29일에 작성된 일기
 
 ### read diary
-GET http://localhost:8080/read/diary?date=2023-11-25
+GET http://localhost:8080/read/diary?date=2023-11-29
 Accept: application/json
 
 ### read diaries
@@ -16,3 +16,6 @@ Accept: application/json
 PUT http://localhost:8080/update/diary?date=2023-11-25
 
 일기 수정하기!!
+
+### delete all diary by date
+DELETE http://localhost:8080/delete/diary?date=2023-11-29
