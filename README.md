@@ -39,6 +39,9 @@
 
 ![erd](https://github.com/JGoo99/DiaryWithWeather/assets/126454114/a34111e3-706e-4991-a5d1-b175275263f9)
 
+날씨 정보는 [WeatherMap](https://openweathermap.org/) 에서 호출하여 사용했습니다.
+
+
 <br/>
 
 ## API 구조
